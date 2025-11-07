@@ -8,26 +8,26 @@ extends Control
 @onready var menu_panel := $MenuPopup
 
 func _ready() -> void:
-    inventory_button.pressed.connect(_toggle_inventory)
-    journal_button.pressed.connect(_toggle_journal)
-    menu_button.pressed.connect(_toggle_menu)
-    menu_panel.visible = false
-    inventory_panel.visible = false
-    journal_panel.visible = false
+	inventory_button.pressed.connect(_toggle_inventory)
+	journal_button.pressed.connect(_toggle_journal)
+	menu_button.pressed.connect(_toggle_menu)
+	menu_panel.visible = false
+	inventory_panel.visible = false
+	journal_panel.visible = false
 
 func _toggle_inventory() -> void:
-    journal_panel.visible = false
-    inventory_panel.visible = not inventory_panel.visible
+	journal_panel.visible = false
+	inventory_panel.visible = not inventory_panel.visible
 
 func _toggle_journal() -> void:
-    inventory_panel.visible = false
-    journal_panel.visible = not journal_panel.visible
+	inventory_panel.visible = false
+	journal_panel.visible = not journal_panel.visible
 
 func _toggle_menu() -> void:
-    menu_panel.visible = not menu_panel.visible
+	menu_panel.visible = not menu_panel.visible
 
 func _on_resume_pressed() -> void:
-    menu_panel.visible = false
+	menu_panel.visible = false
 
 func _on_exit_pressed() -> void:
-    get_tree().quit()
+	get_tree().quit()

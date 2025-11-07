@@ -10,12 +10,12 @@ class_name VNItemResource
 @export var raw_variant: String = ""
 
 func duplicate_for_stack() -> VNItemResource:
-var copy := VNItemResource.new()
-copy.item_id = item_id
-copy.display_name = display_name
-copy.stack_size = stack_size
-copy.max_stacks = max_stacks
-copy.size = size
-copy.cooked_variant = cooked_variant
-copy.raw_variant = raw_variant
-return copy
+	var copy := VNItemResource.new()
+	copy.item_id = item_id
+	copy.display_name = display_name
+	copy.stack_size = stack_size
+	copy.max_stacks = max_stacks
+	copy.size = size
+	copy.cooked_variant = cooked_variant
+	copy.raw_variant = raw_variant
+	return copy

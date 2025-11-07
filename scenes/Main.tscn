@@ -1,12 +1,12 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://cmopj5u7uocnp"]
 
-[ext_resource type="Script" path="res://addons/vn_template/core/main_controller.gd" id="1"]
+[ext_resource type="Script" uid="uid://cqe7tnxqs38ta" path="res://addons/vn_template/core/main_controller.gd" id="1"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-rotation_degrees = Vector3(50, 30, 0)
+transform = Transform3D(0.866025, 0.383022, 0.321394, 0, 0.642788, -0.766044, -0.5, 0.663414, 0.55667, 0, 0, 0)
 
 [node name="Locations" type="Node3D" parent="."]
 

@@ -1,0 +1,13 @@
+res://addons/vn_template/core/player.gd
+res://addons/vn_template/Game.gd
+res://addons/vn_template/minigames/bacon_fry.gd
+res://addons/vn_template/interactions/bed.gd
+res://addons/vn_template/interactions/cupboard.gd
+res://addons/vn_template/minigames/egg_sunny.gd
+res://addons/vn_template/interactions/fridge.gd
+res://addons/vn_template/inventory/inventory_view.gd
+res://addons/vn_template/minigames/plating.gd
+res://addons/vn_template/core/main_controller.gd
+res://addons/vn_template/interactions/transition.gd
+res://addons/vn_template/interactions/table_chair.gd
+res://addons/vn_template/interactions/stove.gd

@@ -6,9 +6,9 @@ extends VNInteractable
 signal transition_requested(target_location, spawn_position)
 
 func _ready() -> void:
-    prompt_text = prompt_text if prompt_text != "" else "Move"
-    add_to_group("vn_transitions")
+	prompt_text = prompt_text if prompt_text != "" else "Move"
+	add_to_group("vn_transitions")
 
 func interact(player) -> void:
-    .interact(player)
-    emit_signal("transition_requested", target_location, spawn_position)
+	interact(player)
+	emit_signal("transition_requested", target_location, spawn_position)
