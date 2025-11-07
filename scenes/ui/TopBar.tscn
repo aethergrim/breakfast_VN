@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://addons/vn_template/core/top_bar.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/Inventory.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/ui/Journal.tscn" id="3"]
+[ext_resource type="Script" path="res://addons/vn_template/core/ui_root.gd" id="4"]
+
+[node name="UIRoot" type="CanvasLayer"]
+script = ExtResource("4")
+
+[node name="InventoryLayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Inventory" parent="InventoryLayer" instance=ExtResource("2")]
+visible = false
+
+[node name="Journal" parent="InventoryLayer" instance=ExtResource("3")]
+visible = false
+
+[node name="TopBar" type="Control" parent="."]
+script = ExtResource("1")
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_bottom = 48.0
+
+[node name="HBox" type="HBoxContainer" parent="TopBar"]
+layout_mode = 1
+anchors_preset = 10
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+custom_constants/separation = 8
+
+[node name="InventoryButton" type="Button" parent="TopBar/HBox"]
+text = "Inventory"
+
+[node name="JournalButton" type="Button" parent="TopBar/HBox"]
+text = "Journal"
+
+[node name="MenuButton" type="Button" parent="TopBar/HBox"]
+text = "☰"
+size_flags_horizontal = 1
+
+[node name="MenuPopup" type="PopupPanel" parent="TopBar"]
+visible = false
+position = Vector2(0, 48)
+
+[node name="MenuVBox" type="VBoxContainer" parent="TopBar/MenuPopup"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Resume" type="Button" parent="TopBar/MenuPopup/MenuVBox"]
+text = "Resume"
+
+[node name="Options" type="Button" parent="TopBar/MenuPopup/MenuVBox"]
+text = "Options (WIP)"
+disabled = true
+
+[node name="Exit" type="Button" parent="TopBar/MenuPopup/MenuVBox"]
+text = "Exit"
+
+[node name="Prompt" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_left = 0.4
+anchor_top = 0.85
+anchor_right = 0.6
+anchor_bottom = 0.95
+horizontal_alignment = 1
+vertical_alignment = 1
+visible = false
+
+[node name="VNPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_left = 0.15
+anchor_top = 0.7
+anchor_right = 0.85
+anchor_bottom = 0.95
+visible = false
+
+[node name="Margin" type="MarginContainer" parent="VNPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_left = 12
+custom_constants/margin_top = 12
+custom_constants/margin_right = 12
+custom_constants/margin_bottom = 12
+
+[node name="Text" type="RichTextLabel" parent="VNPanel/Margin"]
+fit_content = true
+autowrap_mode = 2
+
+[connection signal="pressed" from="TopBar/MenuPopup/MenuVBox/Resume" to="TopBar" method="_on_resume_pressed"]
+[connection signal="pressed" from="TopBar/MenuPopup/MenuVBox/Exit" to="TopBar" method="_on_exit_pressed"]
